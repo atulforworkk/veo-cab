@@ -17,7 +17,11 @@ const Home = () => {
             >
               Admin Login
             </button>
-            <button className=" border border-main-color  text-main-color w-[352px] h-[60px]">
+            <button className=" border border-main-color  text-main-color w-[352px] h-[60px]  font-medium" 
+            onClick={()=>{
+              navigate("/subadmin-login")
+            }}
+            >
               Sub Admin Login
             </button>
  

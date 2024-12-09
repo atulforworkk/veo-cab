@@ -1,35 +1,40 @@
-import Login from "@/page/login/Login";
-import { createBrowserRouter } from "react-router-dom";
 
+import { createBrowserRouter } from "react-router-dom";
 import Home from "@/page/home/Home";
 import PreAuthLayout from "@/layout/PreAuthLayout";
 import AdminLogin from "@/page/adminLogin/AdminLogin";
+import SubAdminLogin from "@/page/subAdminLogin/SubAdminLogin";
+import PostAuthLayout from "@/layout/PostAuthLayout";
 const router = createBrowserRouter([
   {
-
-    path:"/",
-    element:<PreAuthLayout/>,
-    children:[
+    path: "/",
+    element: <PreAuthLayout />,
+    children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/admin-login",
-        element: <AdminLogin/>,
+        element: <AdminLogin />,
       },
 
       {
-        path: "/login",
-        element: <Login />,
+        path: "/subadmin-login",
+        element: <SubAdminLogin/>,
       },
 
 
-    ]
-  }
- 
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <PostAuthLayout />,
+    children: [
+     
 
-
+    ],
+  },
 ]);
 
 export default router;
