@@ -1,25 +1,29 @@
 import images from "images/images";
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate =useNavigate();
   return (
-    <div>
+    <>
       <img src={images.mainLogo} alt="" className="pt-16 pl-10" />
       <div>
         <div className="flex justify-between">
-          <div className="flex flex-col items-center  ml-10">
-            <div className="flex justify-center flex-col">
-            <button className="bg-main-color text-white w-[352px] h-[60px] text-lg font-medium mb-12">
+          <div className="flex flex-col items-center justify-center ml-10">
+            <button className="bg-main-color text-white w-[352px] h-[60px] text-lg font-medium mb-12" 
+            onClick={()=>{
+              navigate("/admin-login")
+            }}
+            >
               Admin Login
             </button>
             <button className=" border border-main-color  text-main-color w-[352px] h-[60px]">
               Sub Admin Login
             </button>
-            </div>
-            <h1 className=" text-3xl font-bold ">
+ 
+          <h1 className=" text-3xl font-bold text-[#121744]">
             Move with <br />
-            <span>Safety </span>
+            <span className="text-main-color">Safety </span>
             to your destination.
           </h1>
           </div>
@@ -34,7 +38,7 @@ const Home = () => {
 
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
