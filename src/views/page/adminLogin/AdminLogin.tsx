@@ -7,7 +7,7 @@ type Props = {};
 const AdminLogin = (props: Props) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 ">
-      <div className=" bg-gradient-to-b from-start to-end h-screen col-span-6 flex items-center justify-center">
+      <div className=" bg-gradient-to-b from-start to-end h-screen col-span-6 flex items-center justify-center ">
         <Login/>
       </div>
     <SideImage/>

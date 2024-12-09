@@ -13,21 +13,19 @@ const Login = (props: Props) => {
              .required("Password should be valid  "),
          }),
          onSubmit: (values) => {
-
- 
          },
        });
        const {values}= formik;
+       console.log("🚀 ~ Login ~ values:", values)
   return (
-      <div className="bg-white w-11/12 p-4">
+      <div className="bg-white w-11/12 h-5/6 p-4 ">
         <div>
           <h1 className="text-4xl font-semibold">Login</h1>
           <p>Login to access your account</p>
         </div>
-     
       <form
         onSubmit={formik.handleSubmit}
-        className=""
+       className="flex-grow"
       >
           <label htmlFor="">Email</label>
           <Input
@@ -44,26 +42,7 @@ const Login = (props: Props) => {
             {formik.errors.username}
           </div>
         ) : null}
-        <div className="relative">
-  <label htmlFor="username" className="label-style">
-    Email
-  </label>
-  <Input
-    id="username"
-    placeholder="Username"
-    name="username"
-    type="text"
-    value={formik.values.username}
-    onChange={formik.handleChange}
-    onBlur={formik.handleBlur}
-    className="input-style"
-  />
-  {formik.touched.username && formik.errors.username ? (
-    <div className="text-red-500 text-sm">
-      {formik.errors.username}
-    </div>
-  ) : null}
-</div>
+        
   
         <div className="">     
           <label htmlFor="password">Password</label>
@@ -85,7 +64,7 @@ const Login = (props: Props) => {
 
         <Button
           type="submit"
-          className="w-96  bg-main-color  hover:bg-custom-Purple my-4 "
+          className="w-full  bg-main-color  hover:bg-custom-Purple my-4 "
          
         >
           Login
