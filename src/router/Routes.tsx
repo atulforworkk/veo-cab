@@ -8,6 +8,7 @@ import UserList from "@/page/dashboard/usersList/UsersList";
 import Dashboard from "@/page/dashboard/Dashboard";
 import ForgotPassword from "@/page/forgotPassword/ForgotPassword";
 import HostList from "@/page/dashboard/hostsList/HostList";
+import DriverList from "@/page/dashboard/driverList/DriversList";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "hosts-list", // Correct: Relative path to "/dashboard"
         element: <HostList />,
+      },
+      {
+        path: "drivers-list", // Correct: Relative path to "/dashboard"
+        element: <DriverList/>,
       },
     ],
   },
