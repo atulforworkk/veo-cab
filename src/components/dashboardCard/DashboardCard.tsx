@@ -9,8 +9,8 @@ type Props = {
 
 const DashboardCard = ({heading="Users", imageSrc = "src/images/Group 494.png",number}: Props) => {
   return (
-    <div className=" col-span-2 border rounded-3xl p-2">
-    <div className="flex items-center gap-2 ">
+    <div className=" col-span-3  shadow-lg rounded-3xl p-2">
+    <div className="flex items-center gap-2 justify-around ">
     <img src={imageSrc} alt="" className="w-22 h-22" />
     <div className="">
       <h1 className="text-[#718EBF] text-lg">

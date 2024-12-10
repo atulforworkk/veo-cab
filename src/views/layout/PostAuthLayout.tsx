@@ -1,5 +1,7 @@
 import DashboardCard from "@/components/dashboardCard/DashboardCard";
 import Sidebar from "@/components/sideBar/SideBar";
+import DashboardTable from "@/composites/dashboard/dashboardTable/DashboardTable";
+import MainFrame from "@/composites/dashboard/mainFrame/MainFrame";
 import { Avatar, Input, Menu } from "@mantine/core";
 import images from "images/images";
 import React from "react";
@@ -12,7 +14,7 @@ const PostAuthLayout = (props: Props) => {
       {/* Sidebar */}
       <div className="w-[18%]  h-screen  ">
         <div className="p-6">
-          <img src={images.postLoginLogo} alt="" className="w-37 h-7  " />
+          <img src={images.postLoginLogo} alt="" className="w-37 h-7  "/>
           <Sidebar/>
         </div>
         <div>
@@ -58,7 +60,10 @@ const PostAuthLayout = (props: Props) => {
               imageSrc="src/images/Group 400.png"
               number="3,460"
             />
+      
           </div>
+          <MainFrame/>
+          <DashboardTable/>
         </div>
       </div>
     </div>
