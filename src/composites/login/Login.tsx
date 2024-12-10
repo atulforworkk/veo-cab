@@ -2,6 +2,7 @@ import { Button, Checkbox, Input, PasswordInput } from "@mantine/core";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "./constants";
+import { Link } from "react-router-dom";
 type Props = {
     heading:string
 };
@@ -34,9 +35,9 @@ const Login = ({heading="Login"}: Props) => {
           <div className="mb-4 w-11/12">
             <label htmlFor="username">Email</label>
             <Input
-              placeholder="Input component"
+              placeholder="Email"
               className="w-full"
-              name="username"
+              name="email"
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -67,7 +68,7 @@ const Login = ({heading="Login"}: Props) => {
           <div className="flex justify-between items-center w-11/12">
             <Checkbox label="Remember me"        radius="xs"
       size="xs"/>
-            <p className="ml-4">Forgot Password</p>
+            <Link to="/forgot-password" className="ml-4 text-sm">Forgot Password</Link>
           </div>
 
           <Button

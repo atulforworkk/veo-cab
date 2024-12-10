@@ -8,6 +8,7 @@ import avatarImage from "./Admin Profile.png"
 import TotalUserIcon from "./Group 494.png"
 import TotalBookingIcon from "./Group 400.png"
 import OverViewGraph from "./Frame 284.png"
+import forgotPageImg from "./Group 2.png"
 const images = {
     mainLogo,
     homePageImg,
@@ -18,7 +19,8 @@ const images = {
     avatarImage,
     TotalUserIcon,
     TotalBookingIcon,
-    OverViewGraph
+    OverViewGraph,
+    forgotPageImg
 };
 
 export default images;

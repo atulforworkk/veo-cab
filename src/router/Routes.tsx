@@ -6,6 +6,7 @@ import SubAdminLogin from "@/page/subAdminLogin/SubAdminLogin";
 import PostAuthLayout from "@/layout/PostAuthLayout";
 import UserList from "@/page/dashboard/usersList/UsersList";
 import Dashboard from "@/page/dashboard/Dashboard";
+import ForgotPassword from "@/page/forgotPassword/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/subadmin-login",
         element: <SubAdminLogin />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword/>,
       },
     ],
   },
