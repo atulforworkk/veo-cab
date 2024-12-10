@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const BASE_URL = "https://dummyjson.com/auth";
+const BASE_URL = "https://veocab-project.vercel.app/api/v1";
 
 const axios = Axios.create({
   baseURL: BASE_URL,

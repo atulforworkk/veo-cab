@@ -5,6 +5,7 @@ import MainFrame from "@/composites/dashboard/mainFrame/MainFrame";
 import { Avatar, Input, Menu } from "@mantine/core";
 import images from "images/images";
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 type Props = {};
 
@@ -33,38 +34,7 @@ const PostAuthLayout = (props: Props) => {
           </div>
         </div>
         {/* Main Body */}
-        <div className="p-4">
-          <div>
-            <h1 className="font-medium text-xl">Dashboard</h1>
-            <p>Welcome!!</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 ">
-            <DashboardCard
-              heading="Total User"
-              imageSrc="src/images/Group 494.png"
-              number="12,750"
-            />
-            <DashboardCard
-              heading="Total Driver"
-              imageSrc="src\images\Group 401.png"
-              number="7,920"
-            />
-            <DashboardCard
-              heading="Total Hosts"
-              imageSrc="src\images\Group 402.png"
-              number="3,460"
-            />
-            <DashboardCard
-              heading="Total Booking"
-              imageSrc="src/images/Group 400.png"
-              number="3,460"
-            />
-      
-          </div>
-          <MainFrame/>
-          <DashboardTable/>
-        </div>
+        <Outlet/>
       </div>
     </div>
   );

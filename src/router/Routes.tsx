@@ -1,10 +1,12 @@
-
 import { createBrowserRouter } from "react-router-dom";
 import Home from "@/page/home/Home";
 import PreAuthLayout from "@/layout/PreAuthLayout";
 import AdminLogin from "@/page/adminLogin/AdminLogin";
 import SubAdminLogin from "@/page/subAdminLogin/SubAdminLogin";
 import PostAuthLayout from "@/layout/PostAuthLayout";
+import UserList from "@/page/dashboard/usersList/UsersList";
+import Dashboard from "@/page/dashboard/Dashboard";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,21 +20,24 @@ const router = createBrowserRouter([
         path: "/admin-login",
         element: <AdminLogin />,
       },
-
       {
         path: "/subadmin-login",
-        element: <SubAdminLogin/>,
+        element: <SubAdminLogin />,
       },
-
-
     ],
   },
   {
     path: "/dashboard",
     element: <PostAuthLayout />,
     children: [
-     
-
+      {
+        path: "", // Correct: Relative path to "/dashboard"
+        element: <Dashboard />,
+      },
+      {
+        path: "users-list", // Correct: Relative path to "/dashboard"
+        element: <UserList />,
+      },
     ],
   },
 ]);
