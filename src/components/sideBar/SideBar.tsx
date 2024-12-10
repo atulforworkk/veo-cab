@@ -1,15 +1,31 @@
 import { Link } from "react-router-dom";
+import { menuData } from "./constants";
 
+type Props = {};
 
+console.log(menuData);
+const { menu } = menuData;
+console.log("🚀 ~ menu:", menu);
 
-type Props = {
-
-};
-
-const Sidebar = ({  }: Props) => {
+const Sidebar = ({}: Props) => {
   return (
-    <div className="bg-[#F7F7F7] relative h-[calc(100vh-65px)]">
-        H1 how are you
+    <div className="">
+      <ul className="py-6">
+        {menu.map((data, index) => {
+          return (
+            <Link to={data.route}>
+            <li key={index} className="flex py-5 text-sm">
+              <img src={data.imagesrc} alt="" />
+              {data.name}
+            </li>
+            </Link>
+          );
+        })}
+      <li className="flex py-10 text-sm">
+      <img src="src/images/sideBarIcon/All bookings.png" alt="" />
+          Logout
+        </li>
+      </ul>
     </div>
   );
 };
