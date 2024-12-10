@@ -34,7 +34,9 @@ const PostAuthLayout = (props: Props) => {
           </div>
         </div>
         {/* Main Body */}
+        <div className="w-11/12 mx-auto py-4">
         <Outlet/>
+        </div>
       </div>
     </div>
   );

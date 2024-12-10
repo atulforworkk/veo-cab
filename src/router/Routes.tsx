@@ -7,7 +7,7 @@ import PostAuthLayout from "@/layout/PostAuthLayout";
 import UserList from "@/page/dashboard/usersList/UsersList";
 import Dashboard from "@/page/dashboard/Dashboard";
 import ForgotPassword from "@/page/forgotPassword/ForgotPassword";
-
+import HostList from "@/page/dashboard/hostsList/HostList";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "users-list", // Correct: Relative path to "/dashboard"
         element: <UserList />,
+      },
+      {
+        path: "hosts-list", // Correct: Relative path to "/dashboard"
+        element: <HostList />,
       },
     ],
   },
