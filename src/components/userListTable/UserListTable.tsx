@@ -2,7 +2,7 @@ import { Divider, LoadingOverlay } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import images from "images/images";
 import { useUserQuery } from "query/useUserQuery";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
 
@@ -39,7 +39,14 @@ const UserListTable = () => {
           />
         );
       })}
-        <TableFooter />
+ <div>
+        <ul className="flex gap-4 justify-end">
+          <li className="text-xl">{"<"}</li>  
+          <li className="text-xl">{">"}</li>
+        </ul>
+      </div>
+
+        {/* <TableFooter />                  */}
       </div>
     </div>
   );
@@ -70,6 +77,17 @@ type Props = {
   kycInfo:string|undefined;
 };
 export const TableRow = ({userID,userName,number,email,registerationDate,kycInfo}: Props) => {
+  const [verified,setVerfied] =useState(true);
+  console.log("🚀 ~ TableRow ~ kycInfo:", kycInfo)
+  
+  useEffect(() => {
+    if(kycInfo==="pending"){
+      setVerfied(false)
+        }else{
+          setVerfied(true)
+        }
+  },[kycInfo]);
+ 
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-2 ">
@@ -78,7 +96,9 @@ export const TableRow = ({userID,userName,number,email,registerationDate,kycInfo
         <div className="col-span-2">{number}</div>
         <div className="col-span-2">{email}</div>
         <div className="col-span-2">{registerationDate}</div>
-        <div className="col-span-2 text-green-400">{kycInfo}</div>
+        {verified? ( <div className="col-span-2 text-green-400">{kycInfo}</div>):<div className="col-span-2 ">{kycInfo}</div>
+        }
+    
         <div className="col-span-1"> <img src={images.actionIcon} alt="" /></div>
       </div>
       <Divider my="xs" />

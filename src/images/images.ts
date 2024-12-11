@@ -10,6 +10,7 @@ import TotalBookingIcon from "./Group 400.png"
 import OverViewGraph from "./Frame 284.png"
 import forgotPageImg from "./Group 2.png"
 import actionIcon from "./pepicons-pop_dots-y.png"
+import groupIconSideBar from "./sideBarIcon/Dashboard.png"
 const images = {
     mainLogo,
     homePageImg,
@@ -22,7 +23,8 @@ const images = {
     TotalBookingIcon,
     OverViewGraph,
     forgotPageImg,
-    actionIcon
+    actionIcon,
+    groupIconSideBar,
 };
 
 export default images;

@@ -37,7 +37,9 @@ const Dashboard = (props: Props) => {
 
     </div>
     <MainFrame/>
+    <div className="pt-12">
     <DashboardTable/>
+    </div>
     <div className="py-12 px-4">
       <h1>Most Popular Rental Cars</h1>
     <DashboardTable/>

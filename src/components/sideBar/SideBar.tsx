@@ -3,6 +3,7 @@ import { menuData } from "./constants";
 import { Button } from "@mantine/core";
 import { useDispatch } from "react-redux";
 import { logOut } from "@/store/authSlice";
+import images from "images/images";
 
 type Props = {};
 
@@ -25,7 +26,7 @@ const Sidebar = ({}: Props) => {
           return (
             <Link to={data.route}>
             <li key={index} className="flex py-5 text-sm">
-              <img src={data.imagesrc} alt="" />
+              <img src= {images.groupIconSideBar} alt="" />
               {data.name}
             </li>
             </Link>
