@@ -2,7 +2,7 @@ import { Button, Checkbox, Input, PasswordInput } from "@mantine/core";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "./constants";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "store";
 import { login } from "@/actions/login";
@@ -11,6 +11,7 @@ type Props = {
 };
 
 const Login = ({heading="Login"}: Props) => {
+  const navigate =useNavigate();
   const dispatch = useDispatch<AppDispatch>()
   const formik = useFormik({
     initialValues,
@@ -20,9 +21,19 @@ const Login = ({heading="Login"}: Props) => {
         .min(8, "Password must be at least 8 characters")
         .required("Password should be valid"),
     }),
-    onSubmit: (values) => {
+    onSubmit: async(values) => {
+      try {
+        const resultAction = await dispatch(login(values));
+        if (login.fulfilled.match(resultAction)) {
+          const token = localStorage.getItem("token"); // Ensure token is set
+          if (token) navigate("/dashboard"); // Navigate after token is set
+        } else if (login.rejected.match(resultAction)) {
+          console.error(resultAction.payload); // Log error details
+        }
+      } catch (error) {
+        console.error("Unexpected error:", error);
+      }
       
-      dispatch(login(values))
     },
   });
   const { values } = formik;
