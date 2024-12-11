@@ -1,5 +1,5 @@
 import HostTableList from '@/components/hostTableList/HostTableList'
-import ListHeader from '@/components/listHeader/listHeader'
+import AllListHeader from '@/components/listHeader/AllListHeader'
 import React from 'react'
 
 type Props = {}
@@ -7,7 +7,7 @@ type Props = {}
 const HostList = (props: Props) => {
   return (
     <div>
-              <ListHeader heading="Hosts List" subHeading="Here is the information about all the hosts."/>
+              <AllListHeader heading="Hosts List" subHeading="Here is the information about all the hosts."/>
               <HostTableList/>
     </div>
   )

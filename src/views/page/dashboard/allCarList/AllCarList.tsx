@@ -1,3 +1,4 @@
+import AllListHeader from '@/components/listHeader/AllListHeader'
 import React from 'react'
 
 type Props = {}
@@ -5,7 +6,7 @@ type Props = {}
 const AllCarList = (props: Props) => {
   return (
     <div>
-           <ListHeader heading="Hosts List" subHeading="Here is the information about all the cars."/>
+           <AllListHeader heading="Hosts List" subHeading="Here is the information about all the cars."/>
     </div>
   )
 }

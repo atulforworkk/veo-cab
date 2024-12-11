@@ -1,13 +1,13 @@
+import React from 'react'
 import { Button, Input } from "@mantine/core";
 
-import React from "react";
-
 type Props = {
-  heading: string;
-  subHeading:string;
-};
+    heading: string;
+    subHeading:string;
+  };
 
-const ListHeader = ({ heading,subHeading}: Props) => {
+
+const AllListHeader =  ({ heading,subHeading}: Props) => {
   return (
     <div className="flex justify-between items-center">
       <div>
@@ -24,4 +24,4 @@ const ListHeader = ({ heading,subHeading}: Props) => {
   );
 };
 
-export default ListHeader;
+export default AllListHeader

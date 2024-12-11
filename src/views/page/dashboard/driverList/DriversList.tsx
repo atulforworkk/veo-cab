@@ -1,5 +1,5 @@
 import DriverTableList from '@/components/driverTableList/DriverTableList'
-import ListHeader from '@/components/listHeader/listHeader'
+import AllListHeader from '@/components/listHeader/AllListHeader'
 import React from 'react'
 
 type Props = {}
@@ -7,7 +7,7 @@ type Props = {}
 const DriverList = (props: Props) => {
   return (
     <div>
-        <ListHeader heading="Drivers List" subHeading="Here is the information about all the hosts."/>
+        <AllListHeader heading="Drivers List" subHeading="Here is the information about all the hosts."/>
         <DriverTableList/>
     </div>
   )
