@@ -2,10 +2,12 @@ import DashboardCard from "@/components/dashboardCard/DashboardCard";
 import Sidebar from "@/components/sideBar/SideBar";
 import DashboardTable from "@/composites/dashboard/dashboardTable/DashboardTable";
 import MainFrame from "@/composites/dashboard/mainFrame/MainFrame";
+import { logOut } from "@/store/authSlice";
 import { Avatar, Input, Menu } from "@mantine/core";
 import images from "images/images";
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Outlet, useNavigate } from "react-router-dom";
 
 type Props = {};
 
@@ -45,6 +47,13 @@ const PostAuthLayout = (props: Props) => {
 export default PostAuthLayout;
 
 export const UserMenu = () => {
+  const navigate= useNavigate();
+  const dispatch = useDispatch();
+  const handleLogout =async()=>{
+    await dispatch(logOut());
+    navigate("/");
+    console.log("navigated to login page");
+  }
   return (
     <>
       <Menu shadow="md" width={200}>
@@ -56,7 +65,7 @@ export const UserMenu = () => {
           <Menu.Label>Menu</Menu.Label>
           <Menu.Item>Settings</Menu.Item>
           <Menu.Item>Messages</Menu.Item>
-          <Menu.Item color="red">Logout</Menu.Item>
+          <Menu.Item color="red" onClick={handleLogout}>Logout</Menu.Item>
         </Menu.Dropdown>
       </Menu>
     </>

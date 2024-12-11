@@ -2,18 +2,17 @@ import axios from "@/services/axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const login = createAsyncThunk(
-  "auth/home",
+  "admin/login",
   async (
-    { username, password }: { username: string; password: string },
+    { email, password }: { email: string; password: string },
     { rejectWithValue }
   ) => {
     try {
-      const response = await axios.post(`/login`, {
-        username,
+      const response = await axios.post(`/admin/login`, {
+        email,
         password,
       });
       await localStorage.setItem("token", response.data.accessToken);
-      console.log("🚀 ~ response:", response);
       return response.data;
     } catch (error) {
       return rejectWithValue(error);

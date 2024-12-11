@@ -3,11 +3,15 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "./constants";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "store";
+import { login } from "@/actions/login";
 type Props = {
     heading:string
 };
 
 const Login = ({heading="Login"}: Props) => {
+  const dispatch = useDispatch<AppDispatch>()
   const formik = useFormik({
     initialValues,
     validationSchema: Yup.object({
@@ -16,7 +20,10 @@ const Login = ({heading="Login"}: Props) => {
         .min(8, "Password must be at least 8 characters")
         .required("Password should be valid"),
     }),
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      
+      dispatch(login(values))
+    },
   });
   const { values } = formik;
   console.log("🚀 ~ Login ~ values:", values);
