@@ -2,7 +2,7 @@ import { Button, Checkbox, Input, PasswordInput } from "@mantine/core";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { initialValues } from "./constants";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "store";
 import { login } from "@/actions/login";
@@ -25,10 +25,10 @@ const Login = ({heading="Login"}: Props) => {
       try {
         const resultAction = await dispatch(login(values));
         if (login.fulfilled.match(resultAction)) {
-          const token = localStorage.getItem("token"); // Ensure token is set
-          if (token) navigate("/dashboard"); // Navigate after token is set
+          const token = localStorage.getItem("token"); 
+          if (token) navigate("/dashboard"); 
         } else if (login.rejected.match(resultAction)) {
-          console.error(resultAction.payload); // Log error details
+          console.error(resultAction.payload);
         }
       } catch (error) {
         console.error("Unexpected error:", error);

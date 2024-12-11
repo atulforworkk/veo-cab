@@ -1,4 +1,5 @@
-import { Divider } from "@mantine/core";
+import { Divider, LoadingOverlay } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import images from "images/images";
 import { useUserQuery } from "query/useUserQuery";
 import React from "react";
@@ -6,10 +7,21 @@ import React from "react";
 
 
 const UserListTable = () => {
-  const{data }= useUserQuery();
+  const{data,isLoading }= useUserQuery();
+  const [visible, { toggle }] = useDisclosure(true);
+  console.log("🚀 ~ UserListTable ~ isLoading:", isLoading)
   console.log("🚀 ~ UserListTable ~ data:", data)
   return (
     <div className="">
+      {isLoading? 
+         <LoadingOverlay
+         visible={visible}
+         zIndex={1000}
+         overlayProps={{ radius: 'sm', blur: 2 }}
+         loaderProps={{ color: 'pink', type: 'bars' }}
+       />:null
+    }
+       
       <TableHeader />
       <div className="py-3"></div>
       <div className="border p-4">

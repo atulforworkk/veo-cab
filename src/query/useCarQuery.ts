@@ -1,7 +1,7 @@
-import { getCarList } from "@/actions/getUserList";
+import { getCarList } from "@/actions/getCarList";
 import { useQuery } from "react-query";
 
-export const useUserQuery = () =>
+export const useCarQuery = () =>
   useQuery({
     queryKey: ["get_Car"],
     queryFn: getCarList,
